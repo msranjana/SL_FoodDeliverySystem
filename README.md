@@ -62,7 +62,6 @@ The API will be available at [http://localhost:8000](http://localhost:8000).
   "price": 150,
   "category": "Main Course"
      }
-
     ```
   - Returns a success message if the item is added or updated.
 
