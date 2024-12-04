@@ -28,7 +28,7 @@ This is a simple RESTful API for managing a food ordering system. It supports op
 Clone this repository to your local machine:
 
 ```bash
-git clone https://github.com/NitheshAlva/Skilllab-FoodDeliveryApp.git
+https://github.com/msranjana/SL_FoodDeliverySystem.git
 ```
 
 ### 2. Install Dependencies
@@ -48,51 +48,20 @@ Start the server:
 npm start
 ```
 
-The API will be available at [http://localhost:8000](http://localhost:8000).
+The API will be available at [http://localhost:3000](http://localhost:3000).
 
-## API Endpoints
+## **API Endpoints**
 
-### Menu Endpoints
+### **1. Menu Endpoints**
 
-- **POST `/menu`**: Add or update a food item in the menu.
-  - Request body (JSON):
-    ```json
-    {
-  "name": "Pizza",
-  "price": 150,
-  "category": "Main Course"
-     }
-    ```
-  - Returns a success message if the item is added or updated.
-
-- **GET `/menu`**: Get the list of all menu items.
-  - Returns the list of items available in the menu.
-
-### Order Endpoints
-
-- **POST `/orders`**: Place a new order.
-  - Request body (JSON):
-    ```json
-    {
-  "name": "Pizza",
-  "price": 150,
-  "category": "Main Course"
-}
-
-   
-    ```
-  - This body allows you to place an order with specific items and quantities.
-  - Returns the order details along with estimated preparation and delivery times.
-
-- **GET `/orders/:id`**: Get the details of a specific order.
-  - Request parameter: `id` (Order ID)
-  - Returns the order details, including the current status.
-
-### Cron Job
-
-The system automatically updates the status of orders every minute using a cron job. The possible order statuses are:
-
-- **Preparing**: The order is in preparation.
-- **Out for Delivery**: The order is on its way to the customer.
-- **Delivered**: The order has been delivered to the customer.
-
+#### **Add Menu Item**
+- **Method**: `POST`
+- **Endpoint**: `/menu`
+- **Description**: Adds a new menu item to the system.
+- **Request Body**:
+  ```json
+  {
+    "name": "Pizza",
+    "price": 150,
+    "category": "Main Course"
+  }
