@@ -1,6 +1,6 @@
 # Food Delivery System
 
-This is a simple RESTful API for managing a food ordering system. It supports operations to manage the menu, place orders, and track order statuses. The API is built with **Express** and **Node.js**, and it uses a cron job to update the order statuses (e.g., "Preparing", "Out for Delivery", "Delivered").
+This is a simple RESTful API for managing a food ordering system for **Milestone1** under **TCE**. It supports operations to manage the menu, place orders, and track order statuses. The API is built with **Express** and **Node.js**, and it uses a cron job to update the order statuses (e.g., "Preparing", "Out for Delivery", "Delivered").
 
 ## Features
 
