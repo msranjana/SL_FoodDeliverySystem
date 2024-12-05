@@ -35,7 +35,7 @@ https://github.com/msranjana/SL_FoodDeliverySystem.git
 Navigate to the project directory and install the required dependencies:
 
 ```bash
-cd Skilllab-FoodDeliveryApp
+cd SL_FoodDeliverySystem-main
 npm install
 ```
 
@@ -44,7 +44,7 @@ npm install
 Start the server:
 
 ```bash
-npm start
+node index.js
 ```
 
 The API will be available at [http://localhost:3000](http://localhost:3000).
