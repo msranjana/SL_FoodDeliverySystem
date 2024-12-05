@@ -17,10 +17,10 @@ This is a simple RESTful API for managing a food ordering system. It supports op
 
 ## Installation
 
-### Prerequisites
+### **Prerequisites**
 
-- **Node.js** (>= 14.x)
-- **npm** (Node Package Manager)
+- **Node.js**: Version 14.x or higher  
+- **npm**: Comes bundled with Node.js
 
 ### 1. Clone the Repository
 
@@ -52,6 +52,7 @@ The API will be available at [http://localhost:3000](http://localhost:3000).
 ## **API Endpoints**
 
 ### **1. Menu Endpoints**
+
 
 #### **Add Menu Item**
 - **Method**: `POST`
@@ -89,8 +90,97 @@ The API will be available at [http://localhost:3000](http://localhost:3000).
   ```json
   {
   "error": "Invalid menu item data"
+  }
+  ```
 
 
-  #YET TO FINISH THIS
+#### **Get All Menu Items**
+- **Method**: `GET`
+- **Endpoint**: `/menu`
+- **Description**: Retrieves all menu items.
+- **Response**:
+  ```json
+   [
+  {
+    "id": 1,
+    "name": "Pizza",
+    "price": 15,
+    "category": "Main Course"
+  },
+  {
+    "id": 2,
+    "name": "Cheesecake",
+    "price": 7,
+    "category": "Dessert"
+  }
+  ]
+  ````
+
+
+### **2. Order Endpoints**
+
+
+#### **Add Menu Item**
+- **Method**: `POST`
+- **Endpoint**: `/orders`
+- **Description**:  Places a new order with selected menu items.
+- **Request Body**:
+  ```json
+  {
+  "items": [1, 2]
+  }
+  ````
+- **Response**:
+  ```json
+   {
+  "message": "Order placed successfully",
+  "orderId": 1
+  }
+  ````
+- **Error Response**:
+  ```json
+   {
+  "error": "Invalid order data"
+   }
+  ```
+
   
- 
+#### **Get Order Details**
+- **Method**: `GET`
+- **Endpoint**: `/orders/:id`
+- **Description**: Retrieves details of a specific order by its ID.
+- **Path Parameter**: id: Order ID (integer).
+- **Response**:
+  ```json
+    {
+  "id": 1,
+  "items": [1, 2],
+  "status": "Preparing",
+  "createdAt": "2024-12-04T09:00:00.000Z"
+    }
+  ````
+-**Error Response**:
+  ````json
+    {
+  "error": "Order not found"
+    }
+````
+
+
+### **3. Automated Status Updates (CRON Job)**
+
+#### **Order Status Flow**
+The system automatically updates the status of orders every minute via a CRON job:
+
+1. **Preparing** → **Out for Delivery**  
+2. **Out for Delivery** → **Delivered**
+
+#### **How to Test**:
+1. Place an order using the **Place Order** endpoint.  
+2. Fetch the order details periodically using the **Get Order Details** endpoint to observe the status updates.
+
+
+
+
+
+
