@@ -158,13 +158,13 @@ The API will be available at [http://localhost:3000](http://localhost:3000).
   "status": "Preparing",
   "createdAt": "2024-12-04T09:00:00.000Z"
     }
-  ````
--**Error Response**:
+    ```
+- **Error Response**:
   ````json
     {
   "error": "Order not found"
     }
-````
+   ````
 
 
 ### **3. Automated Status Updates (CRON Job)**
@@ -178,6 +178,40 @@ The system automatically updates the status of orders every minute via a CRON jo
 #### **How to Test**:
 1. Place an order using the **Place Order** endpoint.  
 2. Fetch the order details periodically using the **Get Order Details** endpoint to observe the status updates.
+
+
+
+## **Error Handling & Validation**
+
+- **Description**: Provide a section explaining common error responses and validation for better debugging.
+
+  - **400 Bad Request**: When the input data is invalid, for example, a negative price for a menu item or missing required fields in the order.
+  - **404 Not Found**: If the menu item or order ID does not exist.
+  - **500 Internal Server Error**: For unexpected server errors or issues during the operation.
+
+  #### Example error responses:
+  ```json
+  {
+    "error": "Invalid price. Price must be a positive number."
+  }
+
+
+
+## **Testing the API Locally**
+
+After starting the server with `node index.js`, you can use Postman to make the following requests:
+
+- **Add a Menu Item**: `POST /menu`  
+- **Get All Menu Items**: `GET /menu`  
+- **Place an Order**: `POST /orders`  
+- **Get Order Details**: `GET /orders/:id`  
+
+Make sure to use valid data for menu items and orders. The API will return appropriate status codes:
+- **200 OK**: The request was successful.
+- **400 Bad Request**: Invalid data or missing fields.
+- **404 Not Found**: Resource (order/menu item) not found.
+- **500 Internal Server Error**: Something went wrong with the server.
+
 
 
 
