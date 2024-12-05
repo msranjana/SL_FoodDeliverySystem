@@ -79,17 +79,18 @@ The API will be available at [http://localhost:3000](http://localhost:3000).
   "category": "Main Course"
    }
    ````
-  -**Response**:
+- **Response**:
   ```json
   {
   "message": "Menu item added successfully"
   }
   ````
-  -**Error Response**:
+- **Error Response**:
   ```json
   {
   "error": "Invalid menu item data"
-   }
-  ````
+
+
+  #YET TO FINISH THIS
   
  
