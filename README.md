@@ -1,4 +1,3 @@
-# SL_FoodDeliverySystem
 # Food Delivery System
 
 This is a simple RESTful API for managing a food ordering system. It supports operations to manage the menu, place orders, and track order statuses. The API is built with **Express** and **Node.js**, and it uses a cron job to update the order statuses (e.g., "Preparing", "Out for Delivery", "Delivered").
@@ -65,3 +64,32 @@ The API will be available at [http://localhost:3000](http://localhost:3000).
     "price": 150,
     "category": "Main Course"
   }
+  ````
+  ````json
+  {
+  "name": "Cheesecake",
+  "price": 70,
+  "category": "Dessert"
+  }
+  ````
+  ````json
+   {
+  "name": "Sushi",
+  "price": -50,
+  "category": "Main Course"
+   }
+   ````
+  -**Response**:
+  ```json
+  {
+  "message": "Menu item added successfully"
+  }
+  ````
+  -**Error Response**:
+  ```json
+  {
+  "error": "Invalid menu item data"
+   }
+  ````
+  
+ 
